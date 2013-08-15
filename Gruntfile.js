@@ -2,15 +2,21 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        concat: {
+            css: {
+                src: './public/css/*.css',
+                dest: './public/build/css/concat.css'
+            }
+        },
         requirejs: {
             mainJS: {
                 options: {
-                    baseUrl: "public/js/",
+                    baseUrl: "public/js/app",
                     paths: {
-                        "app": "app/config/Init"
+                        "app": "config/Init"
                     },
                     wrap: true,
-                    name: "libs/almond",
+                    name: "../libs/almond",
                     preserveLicenseComments: false,
                     optimize: "uglify",
                     mainConfigFile: "public/js/app/config/Init.js",
@@ -21,7 +27,7 @@ module.exports = function(grunt) {
             mainCSS: {
                 options: {
                     optimizeCss: "standard",
-                    cssIn: "./public/css/app.css",
+                    cssIn: "./public/build/css/concat.css",
                     out: "./public/css/app.min.css"
                 }
             }
@@ -39,9 +45,10 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.registerTask('build', ['requirejs:mainJS', 'requirejs:mainCSS']);
+    grunt.registerTask('build', ['concat:css','requirejs:mainJS', 'requirejs:mainCSS']);
     grunt.registerTask('default', ['build']);
 
 };
