@@ -1,9 +1,9 @@
-define( [ 'App', 'marionette', 'handlebars', 'models/Model', 'text!templates/welcome.html'],
-    function( App, Marionette, Handlebars, Model, template) {
+define( [ 'App', 'marionette', 'models/Model', 'text!templates/welcome.html'],
+    function( App, Marionette, Model, template) {
         //ItemView provides some default rendering logic
         return Marionette.ItemView.extend( {
             //Template HTML string
-            template: Handlebars.compile(template),
+            template: _.template(template),
             model: new Model({
                 mobile: App.mobile
             }),

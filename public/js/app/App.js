@@ -1,5 +1,5 @@
-define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
-    function ($, Backbone, Marionette, _, Handlebars) {
+define(['jquery', 'backbone', 'marionette', 'underscore'],
+    function ($, Backbone, Marionette, _) {
         var App = new Backbone.Marionette.Application();
 
         //Organize Application into regions corresponding to DOM elements
@@ -14,7 +14,9 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
             return (/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
         }
 
-        App.mobile = isMobile();
+        App.static = {};
+
+        App.static.mobile = isMobile();
 
         App.addInitializer(function (options) {
             Backbone.history.start();

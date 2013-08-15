@@ -4,11 +4,11 @@
 
     <p class="muted">
         You are viewing this application on
-        {{#if mobile}}
-        <strong>Mobile</strong>
-        {{else}}
-        <strong>Desktop</strong>
-        {{/if}}.
+        <% if ( mobile ) { %>
+            <strong>Mobile</strong>
+        <% } else { %>
+            <strong>Desktop</strong>
+        <% } %>
     </p>
     <br/>
     <a class="btn btn-primary btn-large" href="https:github.com/BoilerplateMVC/">See more Boilerplates</a>
