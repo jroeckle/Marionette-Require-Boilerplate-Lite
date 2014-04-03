@@ -1,31 +1,33 @@
 require.config({
     baseUrl:"./js/app",
-    // 3rd party script alias names (Easier to type "jquery" than "libs/jquery, etc")
+    // 3rd party script alias names (Easier to type "jquery" than "../libs/jquery/dist/jquery.min, etc")
     // probably a good idea to keep version numbers in the file names for updates checking
     paths:{
         // Core Libraries
-        "jquery":"../libs/jquery",
-        "underscore":"../libs/lodash",
-        "backbone":"../libs/backbone",
-        "marionette":"../libs/backbone.marionette",
+        "jquery":"../libs/jquery/dist/jquery",
+        "underscore":"../libs/lodash/dist/lodash",
+        "backbone":"../libs/backbone/backbone",
+        "marionette":"../libs/marionette/lib/core/amd/backbone.marionette",
 
         // Plugins
-        "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
-        "bootstrap":"../libs/plugins/bootstrap",
-        "text":"../libs/plugins/text"
+        "backbone.validateAll":"../libs/Backbone.validateAll/src/javascripts/Backbone.validateAll",
+        "text":"../libs/text/text",
+        "backbone.wreqr" : "../libs/backbone.wreqr/lib/amd/backbone.wreqr",
+        "backbone.eventbinder" : "../libs/backbone.eventbinder/lib/amd/backbone.eventbinder",
+        "backbone.babysitter" : "../libs/backbone.babysitter/lib/amd/backbone.babysitter"
     },
     // Sets the configuration for your third party scripts that are not AMD compatible
     shim:{
-        "bootstrap":["jquery"],
+        "jquery" : {
+            exports : "jQuery"
+        },
+        "underscore": {
+            exports: "_"
+        },
         "backbone":{
-            "deps":["underscore"],
+            "deps":["jquery", "underscore"],
             // Exports the global window.Backbone object
             "exports":"Backbone"
-        },
-        "marionette":{
-            "deps":["underscore", "backbone", "jquery"],
-            // Exports the global window.Marionette object
-            "exports":"Marionette"
         },
         // Backbone.validateAll plugin (https://github.com/gfranko/Backbone.validateAll)
         "backbone.validateAll":["backbone"]
@@ -36,9 +38,12 @@ require.config({
 require(["jquery","App", "routers/AppRouter", "controllers/Controller"],
     function ($, App, AppRouter, Controller) {
 
-    App.appRouter = new AppRouter({
-        controller:new Controller()
+    $(function() {
+        App.appRouter = new AppRouter({
+            controller:new Controller()
+        });
+
+        App.start();
     });
 
-    App.start();
 });

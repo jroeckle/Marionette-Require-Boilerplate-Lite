@@ -1,15 +1,15 @@
 {
-  "name": "MRB-Lite",
-  "title": "Marionette and Require Boilerplate Trimmed",
+  "name": "mrb-lite",
+  "title": "Marionette and Require Lite Boilerplate",
   "description": "A Lightweight Marionette.js and Require.js Boilerplate that promotes decoupling your JavaScript into modules, separating business logic from application logic using Models and Views, organizing your application into Regions with default build-up/tear-down logic for you Views, including non-AMD Compatible Third Party Scripts in your project, and optimizing all of your JavaScript (minify, concatenate, etc).",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/jroeckle/Marionette-Require-Boilerplate-Lite",
   "author": {
     "name": "Brett Jones",
     "email": "brettjonesdev@gmail.com",
     "url": "http://www.brettjonesdev.com"
   },
-  "Maintainer": {
+  "maintainer": {
     "name": "Jason Roeckle",
     "url": "http://www.jasonroeckle.com"
   },
@@ -26,8 +26,9 @@
   "dependencies": {
     "express": "3.x",
     "grunt": "~0.4.0",
+    "grunt-contrib-requirejs" : "0.4.3",
     "grunt-contrib-concat": "0.3.0",
-    "grunt-contrib-jshint": "0.6.2"
+    "grunt-contrib-jshint": "0.10.0"
   },
   "main": "./server/server",
   "keywords": ["Marionette.js", "Backbone.js", "Require.js", "Marionette and Require Boilerplate Lite"]

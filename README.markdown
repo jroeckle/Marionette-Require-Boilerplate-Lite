@@ -20,14 +20,20 @@ A Lightweight boilerplate project based off [Marionette-Require-Boilerplate](htt
    4.  If you have installed [Grunt](http://gruntjs.com/) globally in the past, you will need to remove it first by typing `npm uninstall -g grunt`.  If it complains about user permissions, type `sudo npm uninstall -g grunt`.
    5.  Next, install the latest version of [Grunt](http://gruntjs.com/) by typing `npm install -g grunt-cli`.  If it complains about user permissions, type `sudo npm install -g grunt-cli`. 
    6. Navigate to inside of the **Backbone-Require-Boilerplate** folder and type `npm install`
-   7. Next, type `nodemon` (this will start your Node.js web server and restart the server any time you make a file change thanks to the wonderful **nodemon** library)
-   8. To view the demo page, go to `http://localhost:8001`
+   7.  Install [Bower](http://bower.io/) in command line with `npm install -g bower`.
+   8. Run Bower install in command line with `bower install`.
+   8. Next, type `nodemon` (this will start your Node.js web server and restart the server any time you make a file change thanks to the wonderful **nodemon** library)
+   9. To view the demo page, go to `http://localhost:8001`
 
 #TODO
 
-Get grunt optimized.
+Evaluate Gulp.js to reduce Grunt.js complexities.
 
 ##Change Log
+
+`0.0.2` - April 3, 2014
+
+Added Bower to for package management on the front end.  Updated [normalize.css](http://necolas.github.io/normalize.css/) and other components.  Updated related Grunt tasks.
 
 `0.0.1` - August 14, 2013
 
