@@ -12,9 +12,9 @@ require.config({
         // Plugins
         "backbone.validateAll":"../libs/Backbone.validateAll/src/javascripts/Backbone.validateAll",
         "text":"../libs/text/text",
-        "backbone.wreqr" : "../libs/backbone.wreqr/lib/amd/backbone.wreqr",
+        "backbone.wreqr" : "../libs/backbone.wreqr/lib/backbone.wreqr.min",
         "backbone.eventbinder" : "../libs/backbone.eventbinder/lib/amd/backbone.eventbinder",
-        "backbone.babysitter" : "../libs/backbone.babysitter/lib/amd/backbone.babysitter"
+        "backbone.babysitter" : "../libs/backbone.babysitter/lib/backbone.babysitter.min"
     },
     // Sets the configuration for your third party scripts that are not AMD compatible
     shim:{
